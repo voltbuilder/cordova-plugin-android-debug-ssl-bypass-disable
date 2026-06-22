@@ -8,6 +8,18 @@ Include this plugin in the `package.json` or `config.xml` of your Cordova projec
 
 This will have no effect on release builds, or platforms other than Android.
 
+## How it works
+
+On `after_platform_add` for Android, the plugin hook updates this file in your project:
+
+- `platforms/android/CordovaLib/src/org/apache/cordova/engine/SystemWebViewClient.java`
+
+The hook removes the `onReceivedSslError` override from `SystemWebViewClient` so that certificate errors are not bypassed during debug builds.
+
+- If the target file does not exist, the hook fails with an error.
+- If the override is already absent, the hook succeeds as a no-op.
+- The hook writes prefixed logs so users can see exactly what happened during platform add.
+
 ## Development
 
 - Install dependencies: `npm ci`

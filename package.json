@@ -4,9 +4,9 @@
   "description": "A Cordova plugin to disable the default SSL error bypass in Android debug builds",
   "main": "index.js",
   "scripts": {
-    "format": "prettier --write package.json README.md plugin.xml",
-    "format:check": "prettier --check package.json README.md plugin.xml",
-    "test:unit": "echo \"No unit tests yet\"",
+    "format": "prettier --write package.json README.md plugin.xml scripts/**/*.js test/**/*.js",
+    "format:check": "prettier --check package.json README.md plugin.xml scripts/**/*.js test/**/*.js",
+    "test:unit": "node --test",
     "test": "npm run format:check && npm run test:unit"
   },
   "keywords": [
