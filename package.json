@@ -4,7 +4,10 @@
   "description": "A Cordova plugin to disable the default SSL error bypass in Android debug builds",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format": "prettier --write package.json README.md plugin.xml",
+    "format:check": "prettier --check package.json README.md plugin.xml",
+    "test:unit": "echo \"No unit tests yet\"",
+    "test": "npm run format:check && npm run test:unit"
   },
   "keywords": [
     "cordova",
@@ -22,8 +25,14 @@
   },
   "engines": {
     "cordovaDependencies": {
-        "1.0.0": { "cordova-android": ">=4.0.0"}
+      "1.0.0": {
+        "cordova-android": ">=4.0.0"
+      }
     }
+  },
+  "devDependencies": {
+    "@prettier/plugin-xml": "^3.4.2",
+    "prettier": "^3.6.2"
   },
   "repository": "github:voltbuilder/cordova-plugin-android-debug-ssl-bypass-disable",
   "bugs": "https://github.com/voltbuilder/cordova-plugin-android-debug-ssl-bypass-disable/issues",
