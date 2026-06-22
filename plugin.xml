@@ -8,8 +8,11 @@
     <description
   >A Cordova plugin to disable the default SSL error bypass in Android debug builds</description>
     <license>Apache 2.0</license>
-    <keywords>cordova,plugin,android,debug,ssl,disable</keywords>
+    <keywords
+  >cordova,plugin,android,debug,ssl,disable,certificate,tls</keywords>
     <author>VoltBuilder</author>
+    <repo
+  >https://github.com/voltbuilder/cordova-plugin-android-debug-ssl-bypass-disable</repo>
 
     <platform name="android">
         <hook type="after_platform_add" src="scripts/disable-ssl-bypass.js" />

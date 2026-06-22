@@ -58,15 +58,29 @@ function findMatchingBrace(source, openingBraceIndex) {
     }
 
     if (inSingleQuote) {
-      if (char === "'" && previous !== "\\") {
-        inSingleQuote = false;
+      // Count preceding backslashes; quote is escaped only if odd number precede it
+      if (char === "'") {
+        let backslashCount = 0;
+        for (let i = index - 1; i >= 0 && source[i] === "\\"; i -= 1) {
+          backslashCount += 1;
+        }
+        if (backslashCount % 2 === 0) {
+          inSingleQuote = false;
+        }
       }
       continue;
     }
 
     if (inDoubleQuote) {
-      if (char === '"' && previous !== "\\") {
-        inDoubleQuote = false;
+      // Count preceding backslashes; quote is escaped only if odd number precede it
+      if (char === '"') {
+        let backslashCount = 0;
+        for (let i = index - 1; i >= 0 && source[i] === "\\"; i -= 1) {
+          backslashCount += 1;
+        }
+        if (backslashCount % 2 === 0) {
+          inDoubleQuote = false;
+        }
       }
       continue;
     }

@@ -2,7 +2,6 @@
   "name": "cordova-plugin-android-debug-ssl-bypass-disable",
   "version": "1.0.0",
   "description": "A Cordova plugin to disable the default SSL error bypass in Android debug builds",
-  "main": "index.js",
   "scripts": {
     "format": "prettier --write package.json README.md plugin.xml scripts/**/*.js test/**/*.js",
     "format:check": "prettier --check package.json README.md plugin.xml scripts/**/*.js test/**/*.js",
