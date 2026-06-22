@@ -1,5 +1,5 @@
 {
-  "name": "cordova-plugin-android-debug-ssl-bypass-disable",
+  "name": "@voltbuilder/cordova-plugin-android-debug-ssl-bypass-disable",
   "version": "1.0.0",
   "description": "A Cordova plugin to disable the default SSL error bypass in Android debug builds",
   "scripts": {
