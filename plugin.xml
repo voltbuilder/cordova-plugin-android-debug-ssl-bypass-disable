@@ -9,5 +9,6 @@
     <author>VoltBuilder</author>
 
     <platform name="android">
+        <hook type="after_platform_add" src="scripts/disable-ssl-bypass.js" />
     </platform>
 </plugin>
